@@ -1,5 +1,6 @@
 # Enviroment variables:
 # $FIREBASE_TOKEN
+# $CODECOV_TOKEN
 
 version: 2.1
 
@@ -31,8 +32,13 @@ jobs:
           name: Install
           command: npm ci
       - run:
-          name: Run tests
-          command: npm test
+          name: "Run Jest and Collect Coverage Reports"
+          command: npm test --coverage --watchAll=false
+      - run:
+          name: "Push coverage"
+          command: npm run codecov -t :$CODECOV_TOKEN
+      - store_artifacts:
+          path: coverage
   deploy:
     executor: nodejs
     steps:
@@ -48,6 +54,7 @@ jobs:
       - run:
           name: Firebase Deploy
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+
 workflows:
   version: 2.1
   react:
