@@ -1,39 +1,35 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import NotFound from "./NotFound";
 
 // Screens
-import NotFound from "./NotFound";
-import Home from "./Home";
-
-const defaultRoute = {
-  name: "",
-  path: "",
-  exact: true
-};
 
 export const Routes = () => {
   const routes = [
     {
-      ...defaultRoute,
       name: "Home",
       path: "/",
-      component: Home
-    },
-    {
-      ...defaultRoute,
-      name: "Not found",
-      path: "",
-      component: NotFound
+      exact: true,
+      component: () => import("./Home")
     }
   ];
 
-  const renderRoutes = (routesList) => routesList.map((route) => (
-    <Route {...route} key={route.path} />
-  ))
+  const renderRoutes = routesList =>
+    routesList.map(({ component, ...route }) => {
+      const RouteComponent = lazy(component)
+      return (
+        <Route component={RouteComponent} {...route} key={route.path} />
+      )
+    });
 
   return (
     <BrowserRouter>
-      <Switch>{renderRoutes(routes)}</Switch>
+      <Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          {renderRoutes(routes)}
+        </Suspense>
+        <Route component={NotFound} />
+      </Switch>
     </BrowserRouter>
   );
 };
