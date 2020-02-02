@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/vinicius97/react-base-project/tree/master.svg?style=svg)](https://circleci.com/gh/vinicius97/react-base-project/tree/master)
+[![codecov](https://codecov.io/gh/vinicius97/react-base-project/branch/master/graph/badge.svg)](https://codecov.io/gh/vinicius97/react-base-project)
 
 It consists in a basic project structure with routes, continuous integration configuration, componentes, screens and unit tests.
 
