@@ -1,4 +1,4 @@
-[![CircleCI Status](https://circleci.com/gh/vinilana/react-base-project/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/vinilana/react-base-project/tree/master)
+[![CircleCI Status](https://circleci.com/gh/vinilana/react-base-project/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/vinilana/react-base-project/tree/master) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/vinilana/react-base-project.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/vinilana/react-base-project/context:javascript)
 
 # React Base Project
 The React Base Project consists in a basic project structure with routes, continuous integration configuration, componentes, screens and unit tests.
@@ -7,7 +7,7 @@ It's prepared with ci and cd, with the pre configuration for Firebase Deploy.
 
 ## Geting started
 To use this project template into a new project just run the follow command:
-````
+````bash
 npx degit vinilana/react-base-project
 ```` 
 
