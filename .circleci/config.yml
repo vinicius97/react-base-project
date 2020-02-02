@@ -7,14 +7,14 @@ executors:
   nodejs:
     docker:
       - image: node:lts
-    working_directory: /home
+    working_directory: /home/circleci/app
 jobs:
   build:
     executor: nodejs
     steps:
       - checkout
       - attach_workspace:
-          at: /home
+          at: /home/circleci/app
       - run:
           name: Install
           command: npm ci
@@ -26,7 +26,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /home
+          at: /home/circleci/app
       - run:
           name: Install
           command: npm ci
@@ -38,7 +38,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /home
+          at: /home/circleci/app
       - run:
           name: Install
           command: npm install
