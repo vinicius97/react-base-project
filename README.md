@@ -1,6 +1,13 @@
 [![CircleCI Status](https://circleci.com/gh/vinicius97/react-base-project/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/vinicius97/react-base-project/tree/master)
 
+# React Base Project
 It consists in a basic project structure with routes, continuous integration configuration, componentes, screens and unit tests.
+
+## Geting started
+To use this project template into a new project just run the follow command:
+`` 
+npx degit vinicius97/react-base-project
+``
 
 ## Available Scripts
 
