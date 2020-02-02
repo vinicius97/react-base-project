@@ -34,9 +34,6 @@ jobs:
       - run:
           name: "Run Jest and Collect Coverage Reports"
           command: npm test --coverage --watchAll=false
-      - run:
-          name: "Push coverage"
-          command: npm run codecov -t :$CODECOV_TOKEN
       - store_artifacts:
           path: coverage
   deploy:
