@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![CircleCI](https://circleci.com/gh/vinicius97/react-base-project/tree/master.svg?style=svg)](https://circleci.com/gh/vinicius97/react-base-project/tree/master)
 
 It consists in a basic project structure with routes, continuous integration configuration, componentes, screens and unit tests.
 
@@ -28,3 +28,5 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
