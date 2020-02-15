@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
-const NotFound = props => <div>Not found</div>;
+const NotFound = props => <div>Not found</div>
 
-export default NotFound;
+export default NotFound
