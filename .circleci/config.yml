@@ -36,6 +36,18 @@ jobs:
           command: npm test --coverage --watchAll=false
       - store_artifacts:
           path: coverage
+  lint:
+    executor: nodejs
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /home/circleci/app
+      - run:
+          name: Install
+          command: npm ci
+      - run:
+          name: "Run Eslint to ensure the javascript standard code style"
+          command: npm run lint
   deploy:
     executor: nodejs
     steps:
@@ -58,6 +70,9 @@ workflows:
     jobs:
       - build
       - tests:
+          requires:
+              - build
+      - lint:
           requires:
               - build
 #      - deploy:
