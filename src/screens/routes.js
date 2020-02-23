@@ -1,18 +1,16 @@
-import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import NotFound from "./NotFound";
-
-// Screens
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import NotFound from './NotFound'
 
 export const Routes = () => {
   const routes = [
     {
-      name: "Home",
-      path: "/",
+      name: 'Home',
+      path: '/',
       exact: true,
-      component: () => import("./Home")
+      component: () => import('./Home')
     }
-  ];
+  ]
 
   const renderRoutes = routesList =>
     routesList.map(({ component, ...route }) => {
@@ -20,7 +18,7 @@ export const Routes = () => {
       return (
         <Route component={RouteComponent} {...route} key={route.path} />
       )
-    });
+    })
 
   return (
     <BrowserRouter>
@@ -31,5 +29,5 @@ export const Routes = () => {
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
-  );
-};
+  )
+}
