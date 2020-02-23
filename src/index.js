@@ -4,6 +4,11 @@ import './index.scss'
 import Screens from './screens'
 import * as serviceWorker from './serviceWorker'
 
+
+// import i18n (needs to be bundled ;)) 
+import './i18n';
+
+
 ReactDOM.render(<Screens />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
